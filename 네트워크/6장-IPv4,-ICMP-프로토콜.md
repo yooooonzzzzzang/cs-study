@@ -69,8 +69,36 @@
 
 ### [IPv4 조각화 이론](https://youtu.be/_AONcID7Sc8?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
-- 
+큰 IP 패킷들이 적은 MTU(Maximum Transmisssion Unit)를 갖는 링크를 통해 전송되려면 여러개의 작은 패킷으롤 쪼개어 전송돼야한다.
+
+→ 목적지까지 패킷을 전달하는 과정에 통과하는 **각 라우터마다 전송에 적합한 프레임으로 변환이 필요**
+
+조각화가 되면 최종 목적지에 도달할 때까지 재조립되지 않는 것이 일반적. 
+
+IPv4 에서는 **발신지 뿐만 아니라 중간 라우터**에도 IP 조각화 가능
+
+IPv6 에서는 IP 단편화가 **발신지**에서만 가능
+
+재조립은 항상 최종 수신지에서만 가능
+
+- IPv4 의 조각화란
+    - ipv4 protocol 인 20 byte(헤더길이) 를 제외하고 조각화
+    
+    ![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-15%20%EC%98%A4%ED%9B%84%205.17.56.png)
+    
+    MF : 1 뒤에 더 있는지
+    
+    OFFset : 첫번째는 0, 다음은 += 위의 데이터 / 8
+    
+    DATA
+    
+
 
 ### [IPv4 조각화 실습](https://youtu.be/QKEL9aBgHtg?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
--
+- 실습
+    - 보내려는 데이터 크기: 4618
+    - MTU : 1370
+        - 몇개의 패킷으로 쪼개지는지? 4개
+        - 첫번째 패킷의 데이터 크기? 1350
+        - 마지막 패킷의 데이터 크기? 568
