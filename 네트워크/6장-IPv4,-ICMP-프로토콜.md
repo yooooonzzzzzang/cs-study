@@ -43,17 +43,29 @@
         - 11 Time Exceded : 오류, 목적지 갔지만 응답x, 상대방 방화벽
     - code : 소분류
 
-### [IPv4, ICMP프로토콜 실습](https://youtu.be/8ZwTvTuZlVw?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
-
-- 
 
 ### [라우팅 테이블](https://youtu.be/CjnKNIyREHA?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
-- 
+`netstat -r`   으로 확인가능
 
-### [라우팅 테이블 확인 실습](https://youtu.be/tVntagSJctc?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
+어디로 보내야 하는지 설정되어 있음. 지도 역할, 라우팅 테이블 없으면 찾아갈 수 없다. 그래서 0.0.0.0 인 특수한 ip 로 기본 경로를 설정해줌
 
-- 
+![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-15%20%EC%98%A4%ED%9B%84%203.38.21.png)
+
+### 라우팅 테이블 및 전송과정: 다른 네트워크와 통신 과정
+
+![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-15%20%EC%98%A4%ED%9B%84%203.53.25.png)
+
+1. A가 본인의 라우팅 테이블 확인, B의 네트워크 대역이 본인의 라우팅 테이블에 있어야 갈 수 있음.
+2. 프로토콜 작성 Eth|IPv4|ICMP 요청(8) 
+    1. Eth mac 주소 cccccccccccc (게이트웨이의 맥주소)
+3. 공유기가 라우팅 테이블을 확인하고 목적지까지 갈 수 있게 옆네트워크로 향하도록 이더넷 프로토콜을 다시 만듦
+4. 네트워크 대역이 바뀔때마다 이더넷 프로토콜 다시 만듦(초록 → 보라)
+5. 상대 공유기가 b 컴퓨터로 이더넷 프로토콜 다시 mac 주소 bbbbbb 됨
+6. 받았다고 0 버전으로 A 컴퓨터로 보내기 위에것 반복
+
+→ 맥주소 모르면 arp 추가로 해야함
+
 
 ### [IPv4 조각화 이론](https://youtu.be/_AONcID7Sc8?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
