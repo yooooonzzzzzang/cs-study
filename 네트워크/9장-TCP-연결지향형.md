@@ -6,7 +6,7 @@ TCP는 UDP보다 안전하지만 느리다.
 
 - tcp 구조
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05e32cb6-d5c7-435f-9b1d-75eaaaa2dd13/Untitled.png)
+![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-23%20%EC%98%A4%ED%9B%84%202.44.21.png)
 
 - Offset : ip는 헤더의길이 4로 나눠서 작성, 얘도 똑같다 offset에 작성
 - Reserved: 예약된 필드로 사용되지 않는다.
