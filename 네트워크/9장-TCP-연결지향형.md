@@ -33,15 +33,27 @@ TCP는 UDP보다 안전하지만 느리다.
             3. 클라이언트는 이를 최종적으로 수락하는 패킷을 보낸다
             
             위의 3개의 과정을 **3Way HandShake** 라고 부른다
+        ![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-29%20%EC%98%A4%ED%9B%84%2012.40.36.png)
+
+연결 수립 후 다시 클라이언트로부터 요청
 
 ### [TCP를 이용한 데이터 전송 과정](https://youtu.be/0vBR666GZ5o?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
-- 
+- 데이터 송수신 과정
+    - tcp 를 이용한 데이터 통신을 할 때 단순히 tcp 패킷만을 캡슐화해서 통신하는 것이 아닌 페이로드를 포함한 패킷을 주고 받을 떄의 일정한 규칙
+        1. 보낸 쪽에서 또 보낼때는 SEQ 번호와 ACK 번호가 그대로다
+        2. 받는 쪽에서 SEQ 번호는 받은 ACK 번호가 된다
+        3. 받는 쪽에서 ACK 번호는 받은 SEQ 번호 + 데이터 크기
+        
+        ![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-29%20%EC%98%A4%ED%9B%84%2012.57.46.png)
 
 ### [TCP의 연결 상태 변화](https://youtu.be/yY0uQf0BTH8?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
 
-- 
+- TCP 상태전이도
+    - TCP 연결 상태의 변화
+        - 실선: 클라이언트의 상태변화
+        - 점선: 서버의 상태변화
 
-### [TCP 프로토콜 분석 실습](https://youtu.be/WseqBDo-j3Y?list=PL0d8NnikouEWcF1jJueLdjRIC4HsUlULi)
-
--
+![Untitled](../img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202023-06-29%20%EC%98%A4%ED%9B%84%201.29.38.png)
+서버 : passive open
+클라이언트: active open
